@@ -1,0 +1,112 @@
+# Hasil uji
+Jalankan: `BASE_URL=... node tests/integration/e2e.mjs`
+
+Terakhir: 2026-11-09T15:36:16.946Z — 107/107 lulus.
+
+- ✓ unverified account cannot login (Owner A)
+- ✓ wrong OTP rejected (Owner A)
+- ✓ OTP verify (Owner A)
+- ✓ login (Owner A)
+- ✓ unverified account cannot login (Other B)
+- ✓ wrong OTP rejected (Other B)
+- ✓ OTP verify (Other B)
+- ✓ login (Other B)
+- ✓ unauthenticated request → 401
+- ✓ tenant route without workspace → 400
+- ✓ create workspace (owner)
+- ✓ second tenant created
+- ✓ cross-tenant access with forged workspace id → 403
+- ✓ invitation created (token once)
+- ✓ default business/branch/warehouse exist
+- ✓ create product
+- ✓ duplicate SKU rejected (409)
+- ✓ upload product image (valid PNG)
+- ✓ upload with fake extension/active content rejected
+- ✓ SVG rejected by allowlist
+- ✓ download own file
+- ✓ cross-tenant file download denied
+- ✓ create supplier
+- ✓ create PO
+- ✓ receiving unapproved PO rejected
+- ✓ submit PO
+- ✓ approve PO
+- ✓ over-receipt rejected
+- ✓ partial receipt (6/10)
+- ✓ duplicate receipt prevented (idempotent)
+- ✓ second receipt completes PO
+- ✓ PO status received
+- ✓ stock = 10, value 40000
+- ✓ supplier bill created for 40000
+- ✓ pay supplier bill (manual record)
+- ✓ create customer
+- ✓ cash sale without open cash session rejected
+- ✓ open cash session
+- ✓ second session for same cashier rejected
+- ✓ POS sale (2 × 10,000 + tax) with change
+- ✓ duplicate sale prevented (same key)
+- ✓ concurrent identical requests create only one sale
+- ✓ stock reduced (10-2-1 = 7)
+- ✓ stock movement ledger has sale rows
+- ✓ journals created for sale
+- ✓ trial balance balanced
+- ✓ balance sheet balanced
+- ✓ P&L: revenue 30000 − COGS 12000 → gross 18000
+- ✓ inventory valuation = movement ledger = GL 1300
+- ✓ sales documents reconcile to ledger
+- ✓ unbalanced manual journal rejected
+- ✓ only one of 3 concurrent cashiers gets the last unit
+- ✓ stock never negative
+- ✓ partial return with cash refund
+- ✓ over-return rejected
+- ✓ stock restored after return (8)
+- ✓ inventory reconciles after return
+- ✓ trial balance still balanced after return
+- ✓ journal reversal posts counter-entry
+- ✓ double reversal rejected
+- ✓ expected cash computed
+- ✓ safe drop
+- ✓ cash-out above drawer rejected
+- ✓ close with denominations & variance
+- ✓ trial balance balanced after cash variance
+- ✓ closed period blocks posting
+- ✓ quick income entry
+- ✓ opening balance auto-balances equity
+- ✓ cash-flow report
+- ✓ create task
+- ✓ update task with version
+- ✓ stale version → conflict
+- ✓ unknown field rejected
+- ✓ enable bookings module
+- ✓ booking created
+- ✓ double booking prevented
+- ✓ invitation accepted by invited email
+- ✓ invitation is one-time
+- ✓ cashier cannot access admin (403)
+- ✓ cashier cannot post journals (403)
+- ✓ last owner protection
+- ✓ CSV staged with row validation (1 valid, errors flagged)
+- ✓ import commit queued
+- ✓ batched commit finished (partial because of error rows)
+- ✓ CSV export neutralizes formulas
+- ✓ logout
+- ✓ session revoked after logout
+- ✓ login again
+- ✓ membership restored
+- ✓ products persist after re-login
+- ✓ stock persists
+- ✓ reports persist
+- ✓ RLS: tenant A sees its products, tenant B sees none
+- ✓ RLS: missing tenant context returns zero rows (fail closed)
+- ✓ RLS: cross-tenant INSERT denied (WITH CHECK)
+- ✓ RLS: cross-tenant UPDATE affects 0 rows
+- ✓ RLS: cross-tenant DELETE affects 0 rows
+- ✓ ledger: UPDATE on journal_lines denied
+- ✓ audit log: DELETE denied
+- ✓ runtime role: not superuser, no BYPASSRLS
+- ✓ RLS enabled on every tenant table
+- ✓ OpenAPI document served
+- ✓ RFC 9457 problem details with requestId
+- ✓ cross-origin POST blocked (CSRF)
+- ✓ oversized body rejected (413)
+- ✓ login rate limiting kicks in (429)
+- ✓ sort allowlist (no SQL injection)

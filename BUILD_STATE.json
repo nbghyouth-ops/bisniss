@@ -1,0 +1,4 @@
+{ "project": "Business Flow", "phase": "verification", "status": "web_complete_external_blocked",
+  "completed_phases": ["audit","dependencies","schema","rls-bootstrap","auth","api","finance-inventory-core","modules","templates","feature-groups","frontend","jobs","import","tests"],
+  "blocked_phases": ["neon-provisioning","neon-auth","google-login","android","object-storage","ci","backup-restore-drill"],
+  "failed_tests": [], "next_action": "Owner: provision Neon + email sender; then see BLOCKERS.md", "last_updated": "auto" }
